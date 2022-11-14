@@ -9,7 +9,7 @@ pipeline{
         steps{
           sh "mvn test"
           jacoco()
-          junit "target/surfiregit-reports/*.xml" 
+          junit "target/surfire-reports/*.xml" 
         }
       }
       stage("build"){
