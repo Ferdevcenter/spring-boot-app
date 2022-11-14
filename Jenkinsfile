@@ -8,7 +8,7 @@ pipeline{
       stage("test"){
         steps{
           sh "mvn test"
-          junit "target/test-reports/*.xml" 
+          junit "target/surfiregit-reports/*.xml" 
         }
       }
       stage("build"){
