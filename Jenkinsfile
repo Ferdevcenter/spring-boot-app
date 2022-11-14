@@ -8,6 +8,7 @@ pipeline{
       stage("test"){
         steps{
           sh "mvn test"
+          junit "/build/test-reports/*.xml" 
         }
       }
       stage("build"){
