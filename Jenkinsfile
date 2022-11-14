@@ -4,8 +4,14 @@ pipeline{
       label "nodo-java"
     }
   }
-    stages{
-      
+  environment {
+        NEXUS_VERSION = "nexus3"
+        NEXUS_PROTOCOL = "http"
+        NEXUS_URL = "192.168.49.6:8081"
+        NEXUS_REPOSITORY = "bootcamp"
+        NEXUS_CREDENTIAL_ID = "nexus"
+    }
+    stages{ 
       stage("test"){
         steps{
           sh "mvn test"
@@ -46,7 +52,8 @@ pipeline{
                                 [artifactId: pom.artifactId,
                                 classifier: "",
                                 file: artifactPath,
-                                type: pom.packaging],                                // Lets upload the pom.xml file for additional information for Transitive dependencies
+                                type: pom.packaging],                                
+                                // Lets upload the pom.xml file for additional information for Transitive dependencies
                                 [artifactId: pom.artifactId,
                                 classifier: "",
                                 file: "pom.xml",
