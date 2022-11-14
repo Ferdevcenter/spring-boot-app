@@ -12,7 +12,7 @@ pipeline{
         NEXUS_REPOSITORY = "bootcamp"
         NEXUS_CREDENTIAL_ID = "Ferdevcenter"
         DOCKERHUB_CREDENTIAL=credentials("Ferdevcenterdockerhub")
-        DOCKER_IMAGE_NAME="Ferdevcenterdockerhub/spring-boot-camp" 
+        DOCKER_IMAGE_NAME="Ferdevcenterdockerhub/spring-boot-app" 
     }
     stages{ 
       stage("test"){
