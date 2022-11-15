@@ -12,7 +12,7 @@ pipeline{
         NEXUS_REPOSITORY = "bootcamp"
         NEXUS_CREDENTIAL_ID = "Ferdevcenter"
         DOCKERHUB_CREDENTIAL=credentials("Ferdevcenterdockerhub")
-        DOCKER_IMAGE_NAME="Ferdevcenterdockerhub/spring-boot-app" 
+        DOCKER_IMAGE_NAME="chikitor/spring-boot-app" 
     }
     stages{ 
       stage("test"){
@@ -76,7 +76,12 @@ pipeline{
           sh "docker build -t $DOCKER_IMAGE_NAME:${versionPom} ."
           sh "docker push $DOCKER_IMAGE_NAME:${versionPom}"
         }
-      }
-
+ //     }
+ //     stage("deploy to k8s") {
+ //           steps{
+ //               sh "git clone https://github.com/dberenguerdevcenter/kubernetes-helm-docker-config.git configuracion --branch demo-java"
+ //               sh "kubectl apply -f configuracion/kubernetes-deployments/spring-boot-app/deployment.yaml --kubeconfig=configuracion/kubernetes-config/config"
+ //           }
+ //     }
     }
 }
