@@ -72,7 +72,7 @@ pipeline{
         }
       stage("Build image and push to docker hub") {
         steps {
- //         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+          sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
           sh "docker build -t $DOCKER_IMAGE_NAME:${versionPom} ."
           sh "docker push $DOCKER_IMAGE_NAME:${versionPom}"
         }
