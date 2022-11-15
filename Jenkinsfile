@@ -76,7 +76,7 @@ pipeline{
           sh "docker build -t $DOCKER_IMAGE_NAME:${versionPom} ."
           sh "docker push $DOCKER_IMAGE_NAME:${versionPom}"
         }
- //     }
+      }
  //     stage("deploy to k8s") {
  //           steps{
  //               sh "git clone https://github.com/dberenguerdevcenter/kubernetes-helm-docker-config.git configuracion --branch demo-java"
