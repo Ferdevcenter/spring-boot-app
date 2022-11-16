@@ -26,7 +26,7 @@
             <properties>
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
                 <sonar.host.url>
-                    http://localhost:9000
+                    http://sonarqube:9000
                 </sonar.host.url>
                 <sonar.login>sqa_a4facecb32a85162d71d1ee3bc6fec54855823de</sonar.login>
             </properties>
