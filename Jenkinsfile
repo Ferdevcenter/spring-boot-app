@@ -1,10 +1,22 @@
 def versionPom = ""
 pipeline{
-  agent{
-    node {
-      label "nodo-java"
+  agent {
+        kubernetes {
+            yaml '''
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: shell
+    image: chikitor/spring-boot-app:0.0.1-SNAPSHOT
+    command:
+    - sleep
+    args:
+    - infinity
+'''
+            defaultContainer 'shell'
+        }
     }
-  }
   environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
