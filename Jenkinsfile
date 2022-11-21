@@ -23,8 +23,8 @@ spec:
     - sleep
     args:
     - infinity
-'''
-            defaultContainer 'shell'
+  '''
+         defaultContainer 'shell'
         }
     }
   environment {
