@@ -8,12 +8,12 @@ kind: Pod
 spec:
   containers:
   - name: shell
-    image: chikitor/spring-boot-app:0.0.1-SNAPSHOT
+    image: chikitor/jenkins-nodo-java-bootcamp:1.0
     volumeMounts:
     - mountPath: /var/run/docker.sock
       name: docker-socket-volume
     securityContext:
-      privileged: true
+    privileged: true
   volumes:
   - name: docker-socket-volume
     hostPath:
@@ -28,11 +28,11 @@ spec:
         }
     }
   environment {
-        NEXUS_VERSION = "nexus3"
-        NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "192.168.67.3:8081"
-        NEXUS_REPOSITORY = "bootcamp"
-        NEXUS_CREDENTIAL_ID = "Ferdevcenter"
+  //      NEXUS_VERSION = "nexus3"
+  //      NEXUS_PROTOCOL = "http"
+  //      NEXUS_URL = "192.168.67.3:8081"
+  //      NEXUS_REPOSITORY = "bootcamp"
+  //      NEXUS_CREDENTIAL_ID = "Ferdevcenter" 
         DOCKERHUB_CREDENTIALS=credentials("Ferdevcenterdockerhub")
         DOCKER_IMAGE_NAME="chikitor/spring-boot-app" 
     }
