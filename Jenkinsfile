@@ -38,7 +38,7 @@ spec:
   // }
 
     environment {
-        registryCredential='Ferdevcenter'
+        registryCredential='DockerId'
         registryBackend = 'chikitor/spring-boot-app'
     }
 
