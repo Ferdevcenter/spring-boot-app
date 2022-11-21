@@ -9,6 +9,16 @@ spec:
   containers:
   - name: shell
     image: chikitor/spring-boot-app:0.0.1-SNAPSHOT
+    volumeMounts:
+  - mountPath: /var/run/docker.sock
+    name: docker-socket-volume
+  securityContext:
+    privileged: true
+  volumes:
+  - name: docker-socket-volume
+    hostPath:
+      path: /var/run/docker.sock
+      type: Socket
     command:
     - sleep
     args:
